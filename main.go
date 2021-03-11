@@ -13,12 +13,10 @@ import (
 
 func main() {
 	l := log.New(os.Stdout, "fm-api ", log.LstdFlags)
-	hh := handlers.NewHello(l)
-	gh := handlers.NewGoodBye(l)
+	rh := handlers.NewRepuestos(l)
 
 	sm := http.NewServeMux()
-	sm.Handle("/", hh)
-	sm.Handle("/goodbye", gh)
+	sm.Handle("/", rh)
 
 	log.Println("Starting Server")
 
