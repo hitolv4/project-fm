@@ -21,8 +21,10 @@ func main() {
 
 	log.Println("Starting Server")
 
+	port := os.Getenv("PORT")
+
 	s := &http.Server{
-		Addr:         ":9090",
+		Addr:         ":" + port, // 9090
 		Handler:      sm,
 		IdleTimeout:  120 * time.Second,
 		ReadTimeout:  1 * time.Second,
