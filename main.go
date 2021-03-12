@@ -16,7 +16,8 @@ func main() {
 	rh := handlers.NewRepuestos(l)
 
 	sm := http.NewServeMux()
-	sm.Handle("/", rh)
+	sm.Handle("/repuestos", rh)
+	sm.Handle("/repuestos/", rh)
 
 	log.Println("Starting Server")
 
